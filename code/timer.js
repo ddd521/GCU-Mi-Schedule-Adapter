@@ -10,7 +10,7 @@ async function scheduleTimer({
     const dateString = await AISchedulePrompt({
         titleText: '开学时间',
         tipText: '请输入本学期的开学时间(如2025-2-24)',
-        defaultText: '2025-9-1', // 提供一个合理的默认日期
+        defaultText: '2025-2-24', // 提供一个合理的默认日期
         validator: value => {
             const datePattern = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
             return datePattern.test(value); // 返回布尔值
@@ -41,7 +41,7 @@ async function scheduleTimer({
         totalWeek: 21, // 总周数：[1, 30]之间的整数
         startSemester: timestamp.toString(), // 开学时间：时间戳，13位长度字符串，推荐用代码生成
         startWithSunday: false, // 是否是周日为起始日，该选项为true时，会开启显示周末选项
-        showWeekend: false, // 是否显示周末
+        showWeekend: true, // 是否显示周末
         forenoon: 4, // 上午课程节数：[1, 10]之间的整数
         afternoon: 4, // 下午课程节数：[0, 10]之间的整数
         night: 3, // 晚间课程节数：[0, 10]之间的整数

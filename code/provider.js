@@ -20,7 +20,7 @@ async function scheduleHtmlProvider() {
 
         let term = await AISchedulePrompt({
             titleText: '学期',
-            tipText: '请输入本学期的学期(1,2,3 分别表示上、下)',
+            tipText: '请输入本学期的学期(1,2 分别表示上、下)',
             defaultText: '1',
             validator: value => {
                 if (value === '1' || value === '2' || value === '3') {
