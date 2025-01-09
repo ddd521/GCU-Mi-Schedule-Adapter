@@ -18,7 +18,7 @@ async function scheduleTimer({
     })
     let timestamp;
     try {
-         const date= new Date(dateString);
+        const date = new Date(dateString);
         if (isNaN(date.getTime())) {
             throw new Error('无效的日期格式');
         }
@@ -27,7 +27,7 @@ async function scheduleTimer({
         console.error('日期解析失败:', error.message);
         // 处理错误，例如显示错误信息给用户
     }
-    console.log("开学时间"+timestamp)
+    console.log("开学时间" + timestamp)
     // 这是一个示例函数，用于演示，正常用不到可以删掉
     /*const someAsyncFunc = () => new Promise(resolve => {
         setTimeout(() => resolve(), 1)
@@ -44,7 +44,7 @@ async function scheduleTimer({
         showWeekend: true, // 是否显示周末
         forenoon: 4, // 上午课程节数：[1, 10]之间的整数
         afternoon: 4, // 下午课程节数：[0, 10]之间的整数
-        night: 3, // 晚间课程节数：[0, 10]之间的整数
+        night: 4, // 晚间课程节数：[0, 10]之间的整数
         sections: [
             {
                 section: 1, // 节次：[1, 30]之间的整数
@@ -91,6 +91,10 @@ async function scheduleTimer({
                 section: 11,
                 startTime: '20:40',
                 endTime: '21:25',
+            }, {
+                section: 12,
+                startTime: '21:30',
+                endTime: '22:15',
             }
         ], // 课程时间表，注意：总长度要和上边配置的节数加和对齐
     }
